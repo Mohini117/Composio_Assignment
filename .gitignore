@@ -1,0 +1,17 @@
+# Python virtual environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Environment and secrets
+.env
+
+# Test and run artifacts
+research_agent/results_v1_test.json
+research_agent/run_log_pass1.csv
+research_agent/run_log_pass1_test.csv
+research_agent/.pytest_cache/
+research_agent/__pycache__/

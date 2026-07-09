@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Composio App Research Case Study</title>
+  <style>
+    :root { --bg: #f8fbff; --card: #ffffff; --ink: #0f172a; --muted: #64748b; --brand: #4f7cff; --accent: #23c55e; --border: #dbe9ff; }
+    body { font-family: Inter, Arial, sans-serif; margin: 0; background: linear-gradient(135deg, #f7faff 0%, #eef5ff 100%); color: var(--ink); }
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 28px; }
+    .hero { background: linear-gradient(120deg, #0f172a, #1d4ed8); color: white; border-radius: 24px; padding: 36px; box-shadow: 0 18px 50px rgba(15, 23, 42, 0.16); }
+    .hero h1 { margin: 0 0 8px; font-size: 2.2rem; }
+    .hero p { margin: 0 0 24px; color: #dbeafe; max-width: 760px; }
+    .metrics { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-top: 16px; }
+    .metric { background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 16px; }
+    .metric strong { display: block; font-size: 1.4rem; margin-top: 6px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 20px; box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04); margin: 20px 0; }
+    .card h2, .card h3, .card h4 { margin-top: 0; }
+    .badge { display: inline-block; padding: 5px 10px; border-radius: 999px; font-size: 0.85rem; margin-right: 6px; margin-bottom: 6px; }
+    .badge.blue { background: #eaf2ff; color: #1d4ed8; }
+    .badge.green { background: #e8f9ee; color: #15803d; }
+    .badge.dark { background: #0f172a; color: white; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .chart-card { background: #f8fbff; border: 1px solid var(--border); border-radius: 16px; padding: 16px; }
+    .flow { display: grid; gap: 10px; }
+    .flow-step { background: #f8fbff; border: 1px solid var(--border); padding: 14px 16px; border-radius: 14px; }
+    .flow-arrow { text-align: center; color: var(--brand); font-weight: 700; }
+    .architecture { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+    .box { background: #f8fbff; border: 1px solid var(--border); border-radius: 16px; padding: 12px 14px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { padding: 10px 8px; border-bottom: 1px solid #e2e8f0; text-align: left; vertical-align: top; }
+    th { background: #f8fbff; }
+    .toolbar { display: flex; justify-content: flex-end; margin-bottom: 8px; }
+    .toolbar input { border: 1px solid var(--border); border-radius: 999px; padding: 8px 12px; min-width: 260px; }
+    a { color: var(--brand); word-break: break-all; }
+    ul { padding-left: 18px; }
+    .small { color: var(--muted); font-size: 0.92rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>AI Product Research Agent</h1>
+      <p>A fast, evidence-driven workflow for evaluating whether 100 SaaS apps can be turned into agent-callable toolkits. This version focuses on speed, honesty, and a clear verification loop instead of overstating certainty.</p>
+      <div class="metrics">
+        <div class="metric"><span>100 Apps</span><strong>100</strong></div><div class="metric"><span>Verified confidence</span><strong>87.1%</strong></div><div class="metric"><span>Self-serve ready</span><strong>92</strong></div><div class="metric"><span>MCP-related</span><strong>12</strong></div><div class="metric"><span>Auth patterns</span><strong>6</strong></div><div class="metric"><span>Categories</span><strong>10</strong></div>
+      </div>
+    </section>
+
+    <div class="card">
+      <h2>Key Findings</h2>
+      <ul>
+        <li>OAuth2 is the dominant auth pattern with 59 apps.</li><li>92 apps look self-serve, while 8 are gated or partner-dependent.</li><li>12 apps explicitly indicate MCP-related support or an MCP path.</li><li>REST is still the dominant API surface with 80 apps.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Pattern Summary</h2>
+      <p class="small">The strongest candidates are developer-facing products with public docs, self-serve onboarding, and straightforward auth. The hardest cases are enterprise or partner-gated products that need approval, paid plans, or special access.</p>
+      <div class="grid">
+        <div class="chart-card"><h4>Authentication</h4><svg viewBox="0 0 360 180" width="100%" height="180"><g><rect x="28" y="42" width="42" height="110" rx="6" fill="#4f7cff"></rect><text x="49.0" y="170" text-anchor="middle" fill="#475569" font-size="11">OAuth2</text><text x="49.0" y="34" text-anchor="middle" fill="#0f172a" font-size="11">59</text></g><g><rect x="86" y="42" width="42" height="110" rx="6" fill="#22c55e"></rect><text x="107.0" y="170" text-anchor="middle" fill="#475569" font-size="11">API key</text><text x="107.0" y="34" text-anchor="middle" fill="#0f172a" font-size="11">59</text></g><g><rect x="144" y="125" width="42" height="27" rx="6" fill="#8b5cf6"></rect><text x="165.0" y="170" text-anchor="middle" fill="#475569" font-size="11">None</text><text x="165.0" y="117" text-anchor="middle" fill="#0f172a" font-size="11">15</text></g><g><rect x="202" y="126" width="42" height="26" rx="6" fill="#f59e0b"></rect><text x="223.0" y="170" text-anchor="middle" fill="#475569" font-size="11">Token</text><text x="223.0" y="118" text-anchor="middle" fill="#0f172a" font-size="11">14</text></g><g><rect x="260" y="132" width="42" height="20" rx="6" fill="#ef4444"></rect><text x="281.0" y="170" text-anchor="middle" fill="#475569" font-size="11">Basic</text><text x="281.0" y="124" text-anchor="middle" fill="#0f172a" font-size="11">11</text></g></svg></div>
+        <div class="chart-card"><h4>Self-serve vs Gated</h4><svg viewBox="0 0 360 180" width="100%" height="180"><g><rect x="28" y="42" width="42" height="110" rx="6" fill="#4f7cff"></rect><text x="49.0" y="170" text-anchor="middle" fill="#475569" font-size="11">self-serve</text><text x="49.0" y="34" text-anchor="middle" fill="#0f172a" font-size="11">92</text></g><g><rect x="86" y="142" width="42" height="10" rx="6" fill="#22c55e"></rect><text x="107.0" y="170" text-anchor="middle" fill="#475569" font-size="11">gated</text><text x="107.0" y="134" text-anchor="middle" fill="#0f172a" font-size="11">8</text></g><g><rect x="144" y="142" width="42" height="10" rx="6" fill="#8b5cf6"></rect><text x="165.0" y="170" text-anchor="middle" fill="#475569" font-size="11">partial</text><text x="165.0" y="134" text-anchor="middle" fill="#0f172a" font-size="11">0</text></g></svg></div>
+        <div class="chart-card"><h4>Confidence</h4><svg viewBox="0 0 360 180" width="100%" height="180"><g><rect x="28" y="42" width="42" height="110" rx="6" fill="#4f7cff"></rect><text x="49.0" y="170" text-anchor="middle" fill="#475569" font-size="11">high</text><text x="49.0" y="34" text-anchor="middle" fill="#0f172a" font-size="11">85</text></g><g><rect x="86" y="134" width="42" height="18" rx="6" fill="#22c55e"></rect><text x="107.0" y="170" text-anchor="middle" fill="#475569" font-size="11">medium</text><text x="107.0" y="126" text-anchor="middle" fill="#0f172a" font-size="11">14</text></g><g><rect x="144" y="142" width="42" height="10" rx="6" fill="#8b5cf6"></rect><text x="165.0" y="170" text-anchor="middle" fill="#475569" font-size="11">low</text><text x="165.0" y="134" text-anchor="middle" fill="#0f172a" font-size="11">1</text></g></svg></div>
+        <div class="chart-card"><h4>API Surface</h4><svg viewBox="0 0 360 180" width="100%" height="180"><g><rect x="28" y="42" width="42" height="110" rx="6" fill="#4f7cff"></rect><text x="49.0" y="170" text-anchor="middle" fill="#475569" font-size="11">REST</text><text x="49.0" y="34" text-anchor="middle" fill="#0f172a" font-size="11">80</text></g><g><rect x="86" y="140" width="42" height="12" rx="6" fill="#22c55e"></rect><text x="107.0" y="170" text-anchor="middle" fill="#475569" font-size="11">SDK-only</text><text x="107.0" y="132" text-anchor="middle" fill="#0f172a" font-size="11">9</text></g><g><rect x="144" y="142" width="42" height="10" rx="6" fill="#8b5cf6"></rect><text x="165.0" y="170" text-anchor="middle" fill="#475569" font-size="11">REST+GraphQL</text><text x="165.0" y="134" text-anchor="middle" fill="#0f172a" font-size="11">5</text></g><g><rect x="202" y="142" width="42" height="10" rx="6" fill="#f59e0b"></rect><text x="223.0" y="170" text-anchor="middle" fill="#475569" font-size="11">GraphQL</text><text x="223.0" y="134" text-anchor="middle" fill="#0f172a" font-size="11">3</text></g><g><rect x="260" y="142" width="42" height="10" rx="6" fill="#ef4444"></rect><text x="281.0" y="170" text-anchor="middle" fill="#475569" font-size="11">none found</text><text x="281.0" y="134" text-anchor="middle" fill="#0f172a" font-size="11">3</text></g></svg></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Workflow</h2>
+      <div class="flow">
+        <div class="flow-step">100 apps from the assignment list</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step">Search official docs and fetch the most relevant page</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step">Use an LLM to extract auth, self-serve status, API surface, verdict, and evidence</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step">Validate against JSON schema and retry weak outputs</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step">Generate the HTML report and flag ambiguous apps for manual review</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Agent Architecture</h2>
+      <div class="architecture">
+        <div class="box"><strong>Inputs</strong><br />App list + docs hints</div>
+        <div class="box"><strong>Planner</strong><br />Search and fetch strategy</div>
+        <div class="box"><strong>Extractor</strong><br />LLM + schema validation</div>
+        <div class="box"><strong>Verifier</strong><br />Confidence and evidence checks</div>
+        <div class="box"><strong>Renderer</strong><br />HTML case study generator</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Verification Loop</h2>
+      <p class="small">The workflow is intentionally conservative. If a source looks weak, mismatched, or ambiguous, the app is surfaced for human review rather than over-claimed as fact.</p>
+      <div class="grid">
+        <div class="chart-card">
+          <h4>Quality Signals</h4>
+          <ul>
+            <li>Sample reviewed: 15 apps</li>
+            <li>Manual-review candidates: 15 apps</li>
+            <li>Estimated quality score: 87.1/100</li>
+            <li>Evidence coverage: 100 / 100 records</li>
+          </ul>
+        </div>
+        <div class="chart-card">
+          <h4>Verification Pipeline</h4>
+          <ul>
+            <li>Initial extraction from docs</li>
+            <li>Schema validation and retry</li>
+            <li>Evidence and confidence checks</li>
+            <li>Manual review for ambiguous cases</li>
+          </ul>
+        </div>
+      </div>
+      <table>
+        <thead><tr><th>App</th><th>Initial confidence</th><th>Self-serve</th><th>Verdict</th><th>Why it needs review</th></tr></thead>
+        <tbody><tr><td>Salesforce</td><td>medium</td><td>gated</td><td>buildable</td><td>low-confidence extraction, domain mismatch</td></tr><tr><td>Slack</td><td>medium</td><td>self-serve</td><td>buildable</td><td>low-confidence extraction, domain mismatch</td></tr><tr><td>Lark (Larksuite)</td><td>medium</td><td>gated</td><td>buildable</td><td>low-confidence extraction, domain mismatch</td></tr><tr><td>WhatsApp Business</td><td>medium</td><td>self-serve</td><td>buildable</td><td>low-confidence extraction, domain mismatch</td></tr><tr><td>Meta Ads</td><td>medium</td><td>self-serve</td><td>buildable</td><td>low-confidence extraction, domain mismatch</td></tr><tr><td>LinkedIn Ads</td><td>low</td><td>self-serve</td><td>buildable</td><td>low-confidence extraction</td></tr><tr><td>GoHighLevel</td><td>medium</td><td>gated</td><td>buildable</td><td>low-confidence extraction, domain mismatch</td></tr><tr><td>SendGrid</td><td>medium</td><td>self-serve</td><td>buildable</td><td>low-confidence extraction</td></tr><tr><td>Amazon Selling Partner</td><td>medium</td><td>self-serve</td><td>buildable</td><td>low-confidence extraction, domain mismatch</td></tr><tr><td>Linear</td><td>medium</td><td>self-serve</td><td>buildable</td><td>low-confidence extraction, domain mismatch</td></tr><tr><td>Asana</td><td>medium</td><td>self-serve</td><td>buildable</td><td>low-confidence extraction, domain mismatch</td></tr><tr><td>QuickBooks</td><td>medium</td><td>self-serve</td><td>buildable</td><td>low-confidence extraction, domain mismatch</td></tr><tr><td>Xero</td><td>medium</td><td>self-serve</td><td>buildable</td><td>low-confidence extraction, domain mismatch</td></tr><tr><td>Ramp</td><td>medium</td><td>self-serve</td><td>buildable</td><td>low-confidence extraction, domain mismatch</td></tr><tr><td>PitchBook</td><td>medium</td><td>gated</td><td>buildable</td><td>low-confidence extraction, domain mismatch</td></tr></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Business Recommendations</h2>
+      <ul>
+        <li>Priority 1: Developer platforms and productivity apps are the fastest wins because they are usually self-serve and well-documented.</li><li>Priority 2: Enterprise CRM, finance, and marketing products are more likely to need partner outreach or gated access.</li><li>Priority 3: MCP-ready opportunities appear most often in AI-native, developer-facing, and collaboration-heavy tools.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Interesting Insights</h2>
+      <ul>
+        <li>Developer platforms and public APIs are the easiest early wins.</li>
+        <li>Enterprise finance products are the most likely to need partner outreach.</li>
+        <li>REST remains the default public surface, while MCP is still niche.</li>
+        <li>Self-serve onboarding is common, but not universal.</li>
+      </ul>
+    </div>
+
+    <div class="toolbar"><input id="search-input" type="text" placeholder="Search apps, auth, category..." /></div>
+    <div class="card"><h3>Easy Wins</h3><table class="data-table" id="easy-wins-table"><thead><tr><th>App</th><th>Category</th><th>Auth</th><th>Self-serve</th><th>Verdict</th><th>One liner</th><th>Evidence</th></tr></thead><tbody><tr><td><span class="badge dark">HubSpot</span></td><td>CRM and Sales</td><td>OAuth2, API key, Token</td><td><span class="badge blue">self-serve</span></td><td><span class="badge green">buildable</span></td><td>HubSpot provides authentication options for app developers, including OAuth, static auth access tokens, developer API keys, and client credential tokens.</td><td><a href="https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview">https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview</a></td></tr><tr><td><span class="badge dark">Pipedrive</span></td><td>CRM and Sales</td><td>API key</td><td><span class="badge blue">self-serve</span></td><td><span class="badge green">buildable</span></td><td>Pipedrive API is a RESTful API for interacting with the Pipedrive CRM and Sales platform.</td><td><a href="https://developers.pipedrive.com/docs/api/v1">https://developers.pipedrive.com/docs/api/v1</a></td></tr><tr><td><span class="badge dark">Attio</span></td><td>CRM and Sales</td><td>OAuth2</td><td><span class="badge blue">self-serve</span></td><td><span class="badge green">buildable</span></td><td>Attio provides a public REST API exchanging JSON over HTTPS.</td><td><a href="https://docs.attio.com/rest-api/overview">https://docs.attio.com/rest-api/overview</a></td></tr><tr><td><span class="badge dark">Twenty</span></td><td>CRM and Sales</td><td>API key</td><td><span class="badge blue">self-serve</span></td><td><span class="badge green">buildable</span></td><td>A schema-per-tenant API for CRM and sales data, with REST and GraphQL endpoints generated from the schema.</td><td><a href="https://docs.twenty.com/developers/api-and-webhooks/api">https://docs.twenty.com/developers/api-and-webhooks/api</a></td></tr><tr><td><span class="badge dark">Podio</span></td><td>CRM and Sales</td><td>OAuth2</td><td><span class="badge blue">self-serve</span></td><td><span class="badge green">buildable</span></td><td>Podio API uses OAuth2 protocol for authentication, supporting multiple flows and token refresh.</td><td><a href="https://developers.podio.com/authentication">https://developers.podio.com/authentication</a></td></tr><tr><td><span class="badge dark">Zoho CRM</span></td><td>CRM and Sales</td><td>OAuth2</td><td><span class="badge blue">self-serve</span></td><td><span class="badge green">buildable</span></td><td>Zoho CRM API uses OAuth 2.0 for authentication, enabling third-party apps to access protected resources.</td><td><a href="https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html">https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html</a></td></tr><tr><td><span class="badge dark">Close</span></td><td>CRM and Sales</td><td>API key, OAuth2</td><td><span class="badge blue">self-serve</span></td><td><span class="badge green">buildable</span></td><td>Close Developer Platform provides APIs for automating sales processes, integrating with AI agents, and more.</td><td><a href="https://developer.close.com/">https://developer.close.com/</a></td></tr><tr><td><span class="badge dark">Copper</span></td><td>CRM and Sales</td><td>OAuth2</td><td><span class="badge blue">self-serve</span></td><td><span class="badge green">buildable</span></td><td>Access and build applications that interact with Copper in complex ways</td><td><a href="https://developer.copper.com/">https://developer.copper.com/</a></td></tr><tr><td><span class="badge dark">DealCloud</span></td><td>CRM and Sales</td><td>API key, OAuth2</td><td><span class="badge blue">self-serve</span></td><td><span class="badge green">buildable</span></td><td>DealCloud is a CRM and Sales platform that provides a Python SDK for authentication.</td><td><a href="https://api.docs.dealcloud.com/sdk/python/authentication">https://api.docs.dealcloud.com/sdk/python/authentication</a></td></tr><tr><td><span class="badge dark">Zendesk</span></td><td>Support and Helpdesk</td><td>OAuth2, API key, Basic, Token</td><td><span class="badge blue">self-serve</span></td><td><span class="badge green">buildable</span></td><td>Zendesk API reference documentation for various product capabilities, including ticketing, help center, live chat, and more.</td><td><a href="https://developer.zendesk.com/api-reference/">https://developer.zendesk.com/api-reference/</a></td></tr><tr><td><span class="badge dark">Intercom</span></td><td>Support and Helpdesk</td><td>OAuth2, API key</td><td><span class="badge blue">self-serve</span></td><td><span class="badge green">buildable</span></td><td>Intercom API provides authentication options for private and public apps.</td><td><a href="https://developers.intercom.com/docs/build-an-integration/learn-more/authentication">https://developers.intercom.com/docs/build-an-integration/learn-more/authentication</a></td></tr><tr><td><span class="badge dark">Freshdesk</span></td><td>Support and Helpdesk</td><td>OAuth2, API key</td><td><span class="badge blue">self-serve</span></td><td><span class="badge green">buildable</span></td><td>Cloud-based customer support platform with APIs for helpdesk operations</td><td><a href="https://developers.freshdesk.com/api/">https://developers.freshdesk.com/api/</a></td></tr><tr><td><span class="badge dark">Front</span></td><td>Support and Helpdesk</td><td>None</td><td><span class="badge blue">self-serve</span></td><td><span class="badge green">buildable</span></td><td>Provides resources for building API integrations with its APIs and SDKs.</td><td><a href="https://help.front.com/en/articles/2309">https://help.front.com/en/articles/2309</a></td></tr><tr><td><span class="badge dark">Pylon</span></td><td>Support and Helpdesk</td><td>OAuth2</td><td><span class="badge blue">self-serve</span></td><td><span class="badge green">buildable</span></td><td>Authenticate with Pylon&#x27;s API using Bearer authentication with an API token.</td><td><a href="https://docs.usepylon.com/pylon-docs/developer/api/authentication">https://docs.usepylon.com/pylon-docs/developer/api/authentication</a></td></tr><tr><td><span class="badge dark">LiveAgent</span></td><td>Support and Helpdesk</td><td>API key</td><td><span class="badge blue">self-serve</span></td><td><span class="badge green">buildable</span></td><td>LiveAgent API provides access to various features and data, including agent information, conversations, customers, and reports.</td><td><a href="https://support.liveagent.com/840770-Complete-API-reference">https://support.liveagent.com/840770-Complete-API-reference</a></td></tr></tbody></table></div>
+    <div class="card"><h3>Gated or Needs Human Review</h3><table class="data-table" id="gated-table"><thead><tr><th>App</th><th>Category</th><th>Auth</th><th>Self-serve</th><th>Verdict</th><th>One liner</th><th>Evidence</th></tr></thead><tbody><tr><td><span class="badge dark">Salesforce</span></td><td>CRM and Sales</td><td>OAuth2</td><td><span class="badge blue">gated</span></td><td><span class="badge green">buildable</span></td><td>Salesforce&#x27;s Standard REST API allows interaction with core objects and actions, but requires OAuth 2.0 token or session for API callouts from Apex.</td><td><a href="https://sainisalesforce.com/how-to-authenticate-salesforce-rest-apis-from-within-salesforce/">https://sainisalesforce.com/how-to-authenticate-salesforce-rest-apis-from-within-salesforce/</a></td></tr><tr><td><span class="badge dark">Gorgias</span></td><td>Support and Helpdesk</td><td>API key, OAuth2</td><td><span class="badge blue">gated</span></td><td><span class="badge green">buildable</span></td><td>API for building support and helpdesk apps</td><td><a href="https://developers.gorgias.com/">https://developers.gorgias.com/</a></td></tr><tr><td><span class="badge dark">Lark (Larksuite)</span></td><td>Communications and Messaging</td><td>OAuth2, API key</td><td><span class="badge blue">gated</span></td><td><span class="badge green">buildable</span></td><td>Lark OpenAPI MCP tool for connecting to Feishu/Lark platform and enabling collaboration between AI Agents and Feishu/Lark.</td><td><a href="https://github.com/larksuite/lark-openapi-mcp">https://github.com/larksuite/lark-openapi-mcp</a></td></tr><tr><td><span class="badge dark">GoHighLevel</span></td><td>Marketing, Ads, Email and Social</td><td>OAuth2, API key</td><td><span class="badge blue">gated</span></td><td><span class="badge green">buildable</span></td><td>Comprehensive API platform for building integrations, automations, and custom applications with HighLevel CRM and Marketplace</td><td><a href="https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation">https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation</a></td></tr><tr><td><span class="badge dark">Pinterest</span></td><td>Marketing, Ads, Email and Social</td><td>OAuth2</td><td><span class="badge blue">gated</span></td><td><span class="badge green">buildable</span></td><td>Pinterest API for marketing, ads, email, and social media management</td><td><a href="https://developers.pinterest.com/docs/getting-started/authentication/">https://developers.pinterest.com/docs/getting-started/authentication/</a></td></tr><tr><td><span class="badge dark">Salesforce Commerce Cloud</span></td><td>Ecommerce</td><td>OAuth2</td><td><span class="badge blue">gated</span></td><td><span class="badge green">buildable</span></td><td>Salesforce Commerce Cloud provides an API for custom authentication and authorization.</td><td><a href="https://developer.salesforce.com/docs/commerce/commerce-api/guide/custom-api-authentication.html">https://developer.salesforce.com/docs/commerce/commerce-api/guide/custom-api-authentication.html</a></td></tr><tr><td><span class="badge dark">PitchBook</span></td><td>Finance and Fintech</td><td>API key</td><td><span class="badge blue">gated</span></td><td><span class="badge green">buildable</span></td><td>Access company data from PitchBook via a Python API with real-time access and AI Workbench support.</td><td><a href="https://dlthub.com/context/source/pitchbook-api">https://dlthub.com/context/source/pitchbook-api</a></td></tr><tr><td><span class="badge dark">Consensus</span></td><td>AI, Research and Media-native</td><td>None</td><td><span class="badge blue">gated</span></td><td><span class="badge green">buildable</span></td><td>Seamlessly integrate up-to-date peer-reviewed citations into custom workflows</td><td><a href="https://consensus.app/home/api/">https://consensus.app/home/api/</a></td></tr></tbody></table></div>
+
+    <div class="card">
+      <h2>Limitations</h2>
+      <ul>
+        <li>Some products change auth or access rules frequently.</li>
+        <li>Some docs are partial and require inference.</li>
+        <li>MCP availability evolves quickly and may be undocumented.</li>
+        <li>Only a sample received manual verification in this pass.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Repository and Run</h2>
+      <p>Source files live in this workspace. The generated report is available at <a href="case_study.html">case_study.html</a> and the run instructions are documented in <a href="README.md">README.md</a>.</p>
+      <pre>pip install -r requirements.txt
+python run_pass1.py --test
+python generate_case_study.py</pre>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const input = document.getElementById('search-input');
+      const tables = document.querySelectorAll('.data-table');
+      if (!input) return;
+      input.addEventListener('input', function () {
+        const query = this.value.toLowerCase();
+        tables.forEach(function (table) {
+          const rows = table.querySelectorAll('tbody tr');
+          rows.forEach(function (row) {
+            const text = row.textContent.toLowerCase();
+            row.style.display = text.includes(query) ? '' : 'none';
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

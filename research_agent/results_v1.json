@@ -1,0 +1,3388 @@
+{
+  "Salesforce": {
+    "app": "Salesforce",
+    "category": "CRM and Sales",
+    "one_liner": "Salesforce's Standard REST API allows interaction with core objects and actions, but requires OAuth 2.0 token or session for API callouts from Apex.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": "OAuth 2.0 token or session required for API callouts from Apex, even when calling Salesforce's own APIs.",
+    "self_serve": "gated",
+    "gate_reason": "Requires setup of Connected App, Auth Provider, and Named Credential for secure OAuth authentication.",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://sainisalesforce.com/how-to-authenticate-salesforce-rest-apis-from-within-salesforce/",
+        "snippet": "Salesforce treats callouts \u2014 even to itself \u2014 as external API requests, requiring a valid OAuth 2.0 token or session from an API-authorized context."
+      },
+      {
+        "url": "https://sainisalesforce.com/how-to-authenticate-salesforce-rest-apis-from-within-salesforce/",
+        "snippet": "This is a security restriction to prevent Apex code from misusing UI sessions for backend API access."
+      }
+    ],
+    "confidence": "medium",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:55:18.402553+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "HubSpot": {
+    "app": "HubSpot",
+    "category": "CRM and Sales",
+    "one_liner": "HubSpot provides authentication options for app developers, including OAuth, static auth access tokens, developer API keys, and client credential tokens.",
+    "auth_methods": [
+      "OAuth2",
+      "API key",
+      "Token"
+    ],
+    "auth_note": "OAuth is required for multiple accounts, while static auth access tokens are used for installing in a single account at a time.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+        "snippet": "If you plan to distribute your app to multiple accounts (either through listing on the HubSpot Marketplace or by managing specific authorized accounts), your app must be built using OAuth authentication."
+      },
+      {
+        "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+        "snippet": "If you choose this option, you can install your app in a maximum of 10 accounts at a time."
+      },
+      {
+        "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+        "snippet": "If a feature or endpoint requires a developer API key, it\u2019ll be documented in the associated guide or reference article."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:55:30.946436+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Pipedrive": {
+    "app": "Pipedrive",
+    "category": "CRM and Sales",
+    "one_liner": "Pipedrive API is a RESTful API for interacting with the Pipedrive CRM and Sales platform.",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": "API token can be obtained manually from the Pipedrive app",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developers.pipedrive.com/docs/api/v1",
+        "snippet": "This reference helps you implement the RESTful Pipedrive API."
+      },
+      {
+        "url": "https://developers.pipedrive.com/docs/api/v1",
+        "snippet": "The API token can be obtained manually from the Pipedrive app."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:55:37.911933+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Attio": {
+    "app": "Attio",
+    "category": "CRM and Sales",
+    "one_liner": "Attio provides a public REST API exchanging JSON over HTTPS.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.attio.com/rest-api/overview",
+        "snippet": "Attio provides a public REST API which exchanges JSON over HTTPS."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:55:45.555090+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Twenty": {
+    "app": "Twenty",
+    "category": "CRM and Sales",
+    "one_liner": "A schema-per-tenant API for CRM and sales data, with REST and GraphQL endpoints generated from the schema.",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST+GraphQL",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.twenty.com/developers/api-and-webhooks/api",
+        "snippet": "Your workspace-specific API documentation is available under Settings \u2192 API & Webhooks after creating an API key."
+      },
+      {
+        "url": "https://docs.twenty.com/developers/api-and-webhooks/api",
+        "snippet": "Base URLs | Environment | Base URL | Cloud | https://api.twenty.com/ | Self-Hosted | https://{your-domain}/ |"
+      },
+      {
+        "url": "https://docs.twenty.com/developers/api-and-webhooks/api",
+        "snippet": "Authentication"
+      },
+      {
+        "url": "https://docs.twenty.com/developers/api-and-webhooks/api",
+        "snippet": "Rate limits | Limit | Value | Requests | 100 per minute | Batch size | 60 records per call |"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:55:52.924650+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Podio": {
+    "app": "Podio",
+    "category": "CRM and Sales",
+    "one_liner": "Podio API uses OAuth2 protocol for authentication, supporting multiple flows and token refresh.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developers.podio.com/authentication",
+        "snippet": "The Podio API uses the OAuth2 protocol for authentication."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:55:59.307349+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Zoho CRM": {
+    "app": "Zoho CRM",
+    "category": "CRM and Sales",
+    "one_liner": "Zoho CRM API uses OAuth 2.0 for authentication, enabling third-party apps to access protected resources.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+        "snippet": "The Zoho CRM API uses the OAuth 2.0 protocol for authentication."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:56:08.935158+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Close": {
+    "app": "Close",
+    "category": "CRM and Sales",
+    "one_liner": "Close Developer Platform provides APIs for automating sales processes, integrating with AI agents, and more.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": true,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.close.com/",
+        "snippet": "Full endpoint docs with schemas, examples, and an interactive API explorer."
+      },
+      {
+        "url": "https://developer.close.com/",
+        "snippet": "API keys for scripts or OAuth 2.0 for user-facing integrations."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:56:22.036513+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Copper": {
+    "app": "Copper",
+    "category": "CRM and Sales",
+    "one_liner": "Access and build applications that interact with Copper in complex ways",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_note": "Change Policy available here"
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.copper.com/",
+        "snippet": "The Copper Web API allows you to access and build your own applications that interact with Copper in more complex ways than the integrations we provide out of the box."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:56:33.821604+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "DealCloud": {
+    "app": "DealCloud",
+    "category": "CRM and Sales",
+    "one_liner": "DealCloud is a CRM and Sales platform that provides a Python SDK for authentication.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "SDK-only",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://api.docs.dealcloud.com/sdk/python/authentication",
+        "snippet": "The DealCloud class can be instantiated by passing the site URL and API credentials as arguments."
+      },
+      {
+        "url": "https://api.docs.dealcloud.com/sdk/python/authentication",
+        "snippet": "The default environment variable names are, these can be overridden if desired: DC_SDK_SITE_URL, DC_SDK_CLIENT_ID, DC_SDK_CLIENT_SECRET."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:56:50.299683+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Zendesk": {
+    "app": "Zendesk",
+    "category": "Support and Helpdesk",
+    "one_liner": "Zendesk API reference documentation for various product capabilities, including ticketing, help center, live chat, and more.",
+    "auth_methods": [
+      "OAuth2",
+      "API key",
+      "Basic",
+      "Token"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.zendesk.com/api-reference/",
+        "snippet": "Most of our APIs are organized by product capabilities."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:57:03.719586+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Intercom": {
+    "app": "Intercom",
+    "category": "Support and Helpdesk",
+    "one_liner": "Intercom API provides authentication options for private and public apps.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "auth_note": "Access Token for private apps, OAuth for public apps.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+        "snippet": "To access the Intercom API, you have two authentication options depending on whether you app is public or private."
+      },
+      {
+        "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+        "snippet": "Asking your users for their Access Tokens rather than implementing OAuth is against our terms of service and may result in your API access being revoked."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:57:18.560940+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Freshdesk": {
+    "app": "Freshdesk",
+    "category": "Support and Helpdesk",
+    "one_liner": "Cloud-based customer support platform with APIs for helpdesk operations",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_note": "Deprecation policy: older version will cease to function after six months"
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developers.freshdesk.com/api/",
+        "snippet": "Freshdesk's APIs belong to the Representational State Transfer (REST) category."
+      },
+      {
+        "url": "https://developers.freshdesk.com/api/",
+        "snippet": "All API requests should hit the secured endpoint, that is, only HTTPS"
+      },
+      {
+        "url": "https://developers.freshdesk.com/api/",
+        "snippet": "The current version of production level APIs is v2."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:57:40.988958+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Front": {
+    "app": "Front",
+    "category": "Support and Helpdesk",
+    "one_liner": "Provides resources for building API integrations with its APIs and SDKs.",
+    "auth_methods": [
+      "None"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST+GraphQL",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://help.front.com/en/articles/2309",
+        "snippet": "Front provides developers the following resources for building integrations with our APIs and SDKs."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:57:52.624668+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Pylon": {
+    "app": "Pylon",
+    "category": "Support and Helpdesk",
+    "one_liner": "Authenticate with Pylon's API using Bearer authentication with an API token.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": "Uses Bearer authentication with API token.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+        "snippet": "The Pylon API uses Bearer authentication. This means you\u2019ll need to pass your API token in the header of your request:"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:58:14.008770+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "LiveAgent": {
+    "app": "LiveAgent",
+    "category": "Support and Helpdesk",
+    "one_liner": "LiveAgent API provides access to various features and data, including agent information, conversations, customers, and reports.",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": "API key is required for authentication.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://support.liveagent.com/840770-Complete-API-reference",
+        "snippet": "Return messages are in JSON format by default. But you can change this to XML by adding .xml at the end of call URL."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:58:39.084830+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Plain": {
+    "app": "Plain",
+    "category": "Support and Helpdesk",
+    "one_liner": "A helpdesk and support platform for businesses.",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": "API keys are created with specific permissions.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "GraphQL",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.plain.com/docs/graphql/authentication",
+        "snippet": "Create an API Key Click \u201cAdd API Key\u201d and select the permissions you need."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:58:49.115583+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Help Scout": {
+    "app": "Help Scout",
+    "category": "Support and Helpdesk",
+    "one_liner": "Help Scout provides tools for developers to integrate with their support and helpdesk platform.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.helpscout.com/",
+        "snippet": "Help Scout provides several tools for developers to make magic happen:"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:58:54.406177+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Gorgias": {
+    "app": "Gorgias",
+    "category": "Support and Helpdesk",
+    "one_liner": "API for building support and helpdesk apps",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "auth_note": null,
+    "self_serve": "gated",
+    "gate_reason": "approval required for Public apps",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developers.gorgias.com/",
+        "snippet": "Refer to our API documentation to find all the information you need."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:59:04.847890+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Gladly": {
+    "app": "Gladly",
+    "category": "Support and Helpdesk",
+    "one_liner": "Gladly API facilitates customer service conversations by providing agents with rich customer context.",
+    "auth_methods": [
+      "Token"
+    ],
+    "auth_note": "Token-based Basic Authentication, associated with designated Gladly users.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.gladly.com/rest/",
+        "snippet": "You can integrate easily with Gladly by calling Gladly's REST API and implementing the Lookup API to provide data from your own services."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:59:21.341222+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Slack": {
+    "app": "Slack",
+    "category": "Communications and Messaging",
+    "one_liner": "Slack authentication involves obtaining tokens and permissions for secure app access.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.slack.dev/authentication/",
+        "snippet": "Slack apps use OAuth scopes to govern what they can access."
+      },
+      {
+        "url": "https://docs.slack.dev/authentication/",
+        "snippet": "You will attach these scopes to your tokens."
+      }
+    ],
+    "confidence": "medium",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:59:33.023915+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "Twilio": {
+    "app": "Twilio",
+    "category": "Communications and Messaging",
+    "one_liner": "Build better and engage your customers across all channels with our API reference documentation, quickstarts, SDKs and multi-language code samples.",
+    "auth_methods": [
+      "OAuth2",
+      "API key",
+      "Basic"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": true,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/docs",
+        "snippet": "Twilio Docs Build better and engage your customers across all channels with our API reference documentation, quickstarts, SDKs and multi-language code samples."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T10:59:51.352113+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Zoho Cliq": {
+    "app": "Zoho Cliq",
+    "category": "Communications and Messaging",
+    "one_liner": "Zoho Cliq's REST API enables seamless communication between applications and the Zoho Cliq platform, leveraging standard HTTP protocols.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": "OAuth 2.0 is used for authentication, allowing third-party applications to gain delegated access to protected resources in Zoho Cliq.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/cliq/help/restapi/v2/introduction/",
+        "snippet": "Zoho Cliq's REST API is built on RESTful architecture principles, enabling seamless communication between your applications and the Zoho Cliq platform."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:00:08.978142+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Lark (Larksuite)": {
+    "app": "Lark (Larksuite)",
+    "category": "Communications and Messaging",
+    "one_liner": "Lark OpenAPI MCP tool for connecting to Feishu/Lark platform and enabling collaboration between AI Agents and Feishu/Lark.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "auth_note": "OAuth 2.0 redirect URL must be set to http://localhost:3000/callback for user authentication.",
+    "self_serve": "gated",
+    "gate_reason": "Requires creating a Feishu/Lark application and obtaining App ID and App Secret.",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_note": "MCP tools encapsulate Feishu/Lark Open Platform API interfaces."
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://github.com/larksuite/lark-openapi-mcp",
+        "snippet": "This is the Feishu/Lark official OpenAPI MCP tool designed to help users quickly connect to the Feishu/Lark platform and enable efficient collaboration between AI Agents and Feishu/Lark."
+      },
+      {
+        "url": "https://github.com/larksuite/lark-openapi-mcp",
+        "snippet": "To integrate Feishu/Lark functionality in AI tools like Trae, Cursor or Claude, install using the button below."
+      }
+    ],
+    "confidence": "medium",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:00:33.354039+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "Pumble": {
+    "app": "Pumble",
+    "category": "Communications and Messaging",
+    "one_liner": "Pumble API allows interaction with Pumble's API via simple HTTP requests with generated API keys.",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": "Generated API keys are used for authentication.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/",
+        "snippet": "By using the Pumble API addon, you can interact with Pumble\u2019s API documentation without using any complex authentication processes."
+      },
+      {
+        "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/",
+        "snippet": "The generated key enables interaction with the Addon\u2019s public API, allowing users to send requests and execute various actions within Pumble, including: Sending messages, Leaving a reply to a message, Message deletion, Adding a reaction to a message, Channel creation, Listing the messages in a channel (if the channel is private, Addon Bot needs to be a member of that channel), Listing the channels and DMs that belong to the user who created the key"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:00:47.862772+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Discord": {
+    "app": "Discord",
+    "category": "Communications and Messaging",
+    "one_liner": "Interact with Discord data from your own applications using the Discord API.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "auth_note": "Bot token found on the Bot page within your app\u2019s settings, or OAuth2 bearer token gained through the OAuth2 API.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.discord.com/developers/reference",
+        "snippet": "The Discord API is a REST API that allows you to interact with Discord data from your own applications."
+      },
+      {
+        "url": "https://docs.discord.com/developers/reference",
+        "snippet": "Authenticating with the Discord API can be done in one of two ways: Using a bot token found on the Bot page within your app\u2019s settings. For more information on bots see bots vs user accounts."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:01:11.630822+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Telegram": {
+    "app": "Telegram",
+    "category": "Communications and Messaging",
+    "one_liner": "Telegram offers APIs for developers to create customized clients, bots, and widgets, with features like end-to-end encryption, payments, and AI-powered services.",
+    "auth_methods": [
+      "OAuth2",
+      "API key",
+      "Token"
+    ],
+    "auth_note": "OAuth2, API key, and Token are used for authentication, but the exact method is not specified.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST+GraphQL",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://core.telegram.org/",
+        "snippet": "We offer three kinds of APIs for developers."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:01:33.147220+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "WhatsApp Business": {
+    "app": "WhatsApp Business",
+    "category": "Communications and Messaging",
+    "one_liner": "Send engaging messages to customers on WhatsApp with the WhatsApp Business Platform.",
+    "auth_methods": [
+      "None"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "SDK-only",
+      "breadth": "unknown",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://whatsappbusiness.com/developers/developer-hub/",
+        "snippet": "Start building within minutes and send engaging, timely, high-quality messages to them today."
+      }
+    ],
+    "confidence": "medium",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:01:47.780491+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "Aircall": {
+    "app": "Aircall",
+    "category": "Communications and Messaging",
+    "one_liner": "Aircall Public API is a classic REST API for accessing Aircall account information.",
+    "auth_methods": [
+      "OAuth2",
+      "Basic"
+    ],
+    "auth_note": "OAuth2 is required for Technology Partners, while Basic Auth is for Aircall customers building for their own account.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.aircall.io/api-references/",
+        "snippet": "We are maintaining a Public API. This service allows any developers to retrieve and manage Aircall data with HTTP requests."
+      },
+      {
+        "url": "https://developer.aircall.io/api-references/",
+        "snippet": "Authentication can be done through OAuth or Basic Auth."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:02:07.539462+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Vonage": {
+    "app": "Vonage",
+    "category": "Communications and Messaging",
+    "one_liner": "Vonage provides APIs for communications and messaging.",
+    "auth_methods": [
+      "None"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "SDK-only",
+      "breadth": "unknown",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.vonage.com/en/documentation",
+        "snippet": "Documentation"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:02:16.707211+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Google Ads": {
+    "app": "Google Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "one_liner": "Google Ads API utilizes OAuth 2.0 for authentication and authorization, allowing access to user accounts without handling login information.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "auth_note": "OAuth 2.0 credentials and a developer token are required.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developers.google.com/google-ads/api/docs/oauth/overview",
+        "snippet": "Google Ads API utilizes the OAuth 2.0 protocol for authentication and authorization, allowing your app to access user accounts without handling login information."
+      },
+      {
+        "url": "https://developers.google.com/google-ads/api/docs/oauth/overview",
+        "snippet": "To review and revoke access for third-party applications connected to your Google Account, visit your Google Account permissions page."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:02:30.268247+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Meta Ads": {
+    "app": "Meta Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "one_liner": "A publicly available interface to access ads published on Facebook, Instagram, and other Meta-owned platforms.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": "Requires access token with necessary permissions (e.g. ads_read, ads_archive).",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://apidog.com/blog/facebook-ad-library-api/",
+        "snippet": "The Facebook Ad Library API that we are referring to as the Facebook Ad Library API, is a publicly available interface that gives developers access to ads published on Facebook, Instagram, and other Meta-owned platforms."
+      },
+      {
+        "url": "https://apidog.com/blog/facebook-ad-library-api/",
+        "snippet": "This API is particularly useful for transparency research, marketing audits, competitive analysis, ad creative analysis, or building tools around social media ad data."
+      }
+    ],
+    "confidence": "medium",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:02:53.929258+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "LinkedIn Ads": {
+    "app": "LinkedIn Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "one_liner": "LinkedIn's API documentation for business lines, including Marketing, Ads, Email and Social.",
+    "auth_methods": [],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "none found",
+      "breadth": "unknown",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://learn.microsoft.com/en-us/linkedin/",
+        "snippet": "Our API documentation is organized by business lines covering Consumer, Compliance, Learning, Marketing, Sales, and Talent Solutions."
+      }
+    ],
+    "confidence": "low",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:03:13.016543+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "GoHighLevel": {
+    "app": "GoHighLevel",
+    "category": "Marketing, Ads, Email and Social",
+    "one_liner": "Comprehensive API platform for building integrations, automations, and custom applications with HighLevel CRM and Marketplace",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "auth_note": "API keys will be removed from Agency and Sub-account settings for accounts not using them",
+    "self_serve": "gated",
+    "gate_reason": "Requires Advanced API access on Agency Pro plan",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+        "snippet": "HighLevel provides a comprehensive API platform that enables developers to build integrations, automations, and custom applications with the HighLevel CRM and Marketplace."
+      },
+      {
+        "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+        "snippet": "Please Note: Going forward, the ability to generate new API keys will be removed from both Agency and Sub-account settings."
+      },
+      {
+        "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+        "snippet": "Differences Between API Access Across Plan Levels: Basic API access is included with our Starter and Unlimited plans, while Advanced API access is available on our Agency Pro plan."
+      }
+    ],
+    "confidence": "medium",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:03:35.701346+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "Mailchimp": {
+    "app": "Mailchimp",
+    "category": "Marketing, Ads, Email and Social",
+    "one_liner": "Mailchimp Marketing API provides access to various resources for managing marketing campaigns, audiences, and contacts.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://mailchimp.com/developer/marketing/api/",
+        "snippet": "The API root resource links to all other resources available in the API."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:03:59.965516+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Klaviyo": {
+    "app": "Klaviyo",
+    "category": "Marketing, Ads, Email and Social",
+    "one_liner": "Klaviyo provides authentication methods for server- and client-side APIs, including private key, OAuth, and public key authentication.",
+    "auth_methods": [
+      "OAuth2",
+      "API key",
+      "Basic"
+    ],
+    "auth_note": "Private key authentication is used for server-side APIs, OAuth is used for server-side APIs and recommended for tech partners, and public key authentication is used for client-side APIs.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+        "snippet": "Klaviyo provides 3 methods of authentication including private key authentication and OAuth (used to call server-side APIs) and public key authentication (used to call client-side APIs)."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:04:21.679352+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "systeme.io": {
+    "app": "systeme.io",
+    "category": "Marketing, Ads, Email and Social",
+    "one_liner": "systeme.io's public API offers a set of features for interacting with the platform, enabling developers to create new applications, services, or combinations.",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://help.systeme.io/article/2329-how-to-use-systeme-io-public-api",
+        "snippet": "Our public API feature is now available, and it marks a major turning point for our platform, opening up new opportunities for our users, partners, and developers."
+      },
+      {
+        "url": "https://help.systeme.io/article/2329-how-to-use-systeme-io-public-api",
+        "snippet": "You will find some examples of uses for our public API application below:"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:04:36.322463+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Pinterest": {
+    "app": "Pinterest",
+    "category": "Marketing, Ads, Email and Social",
+    "one_liner": "Pinterest API for marketing, ads, email, and social media management",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": null,
+    "self_serve": "gated",
+    "gate_reason": "Requires approval after submitting app details and request for trial access",
+    "api_surface": {
+      "type": "REST+GraphQL",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developers.pinterest.com/docs/getting-started/authentication/",
+        "snippet": "Verify your account's email address, accept Developer Terms of Service, and register your app details to get your app ID and secret key"
+      },
+      {
+        "url": "https://developers.pinterest.com/docs/getting-started/authentication/",
+        "snippet": "Application requests are reviewed each business day, and you will receive an email notification letting you know if your app has been approved or denied access"
+      },
+      {
+        "url": "https://developers.pinterest.com/docs/getting-started/authentication/",
+        "snippet": "We accept multiple redirect URIs when configuring your app, and the specified redirect URI must not cause the responding server to send a secondary redirect to yet another URI"
+      },
+      {
+        "url": "https://developers.pinterest.com/docs/getting-started/authentication/",
+        "snippet": "We offer a range of Developer tools to help you get started with the Pinterest API quickly, including API Quickstart and Python SDK"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:04:50.454780+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Threads (Meta)": {
+    "app": "Threads (Meta)",
+    "category": "Marketing, Ads, Email and Social",
+    "one_liner": "A messaging app for communities and groups.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developers.facebook.com/documentation/threads/get-started",
+        "snippet": "To get started with the Threads API, you'll need to register your app on the Facebook for Developers platform and obtain an OAuth 2.0 client ID."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:05:06.526464+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "SendGrid": {
+    "app": "SendGrid",
+    "category": "Marketing, Ads, Email and Social",
+    "one_liner": "Harness the power of SendGrid's Automatic Security for seamless and protected email communication.",
+    "auth_methods": [
+      "None"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "none found",
+      "breadth": "unknown",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://support.sendgrid.com/hc/en-us/articles/21415314709147-SendGrid-Automated-Security-Domain-Authentication",
+        "snippet": "Harness the power of SendGrid's Automatic Security for seamless and protected email communication."
+      },
+      {
+        "url": "https://support.sendgrid.com/hc/en-us/articles/21415314709147-SendGrid-Automated-Security-Domain-Authentication",
+        "snippet": "The 'From:' line of your emails should align with the Return-Path domain."
+      },
+      {
+        "url": "https://support.sendgrid.com/hc/en-us/articles/21415314709147-SendGrid-Automated-Security-Domain-Authentication",
+        "snippet": "The page may not be the official source for this app, as the domain does not match the app's known official domain."
+      }
+    ],
+    "confidence": "medium",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:05:21.893808+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Shopify": {
+    "app": "Shopify",
+    "category": "Ecommerce",
+    "one_liner": "Shopify API authentication guide for connecting to Shopify's APIs.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST+GraphQL",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://shopify.dev/docs/api/usage/authentication",
+        "snippet": "You can use Shopify CLI to generate a starter app with boilerplate code that handles authentication and authorization."
+      },
+      {
+        "url": "https://shopify.dev/docs/api/usage/authentication",
+        "snippet": "Apps can have a maximum of 100 active storefront access tokens per shop."
+      },
+      {
+        "url": "https://shopify.dev/docs/api/usage/authentication",
+        "snippet": "To query the Storefront API with a public access token, include it as an X-Shopify-Storefront-Access-Token header on all client-side requests."
+      },
+      {
+        "url": "https://shopify.dev/docs/api/usage/authentication",
+        "snippet": "To query the Storefront API with a private access token: Include the Shopify-Storefront-Private-Token header with the private access token."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:05:41.320755+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "WooCommerce": {
+    "app": "WooCommerce",
+    "category": "Ecommerce",
+    "one_liner": "WooCommerce provides REST API authentication methods for integrating with the WP REST API.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "auth_note": "API keys can be generated through the WordPress admin interface or auto-generated through an endpoint.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.woocommerce.com/docs/apis/rest-api/authentication/",
+        "snippet": "WooCommerce includes two ways to authenticate with the WP REST API."
+      },
+      {
+        "url": "https://developer.woocommerce.com/docs/apis/rest-api/authentication/",
+        "snippet": "API keys can be generated through the WordPress admin interface or auto-generated through an endpoint."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:06:06.027759+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "BigCommerce": {
+    "app": "BigCommerce",
+    "category": "Ecommerce",
+    "one_liner": "BigCommerce offers APIs for managing store data, signing customers in, and integrating third-party services.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": "Three types of OAuth-based API accounts: store-level, app-level, and account-level.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.bigcommerce.com/docs/start/authentication",
+        "snippet": "BigCommerce offers a suite of APIs that let you manage store data, sign customers in, make client-side queries for product information, and write apps that integrate third-party services into store operations."
+      },
+      {
+        "url": "https://developer.bigcommerce.com/docs/start/authentication",
+        "snippet": "BigCommerce API accounts play a role in every authenticated request to our servers."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:35:57.943479+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Salesforce Commerce Cloud": {
+    "app": "Salesforce Commerce Cloud",
+    "category": "Ecommerce",
+    "one_liner": "Salesforce Commerce Cloud provides an API for custom authentication and authorization.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": "Uses Account Manager OAuth 2.0 bearer token for authentication.",
+    "self_serve": "gated",
+    "gate_reason": "Requires custom scope and security scheme setup.",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/custom-api-authentication.html",
+        "snippet": "The Custom APIs DX endpoint uses an Account Manager OAuth 2.0 bearer token for authentication and you must specify one of the following scopes to access this API endpoint:"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:06:53.634776+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Magento (Adobe Commerce)": {
+    "app": "Magento (Adobe Commerce)",
+    "category": "Ecommerce",
+    "one_liner": "Adobe Commerce provides a REST API for performing various tasks, including creating shopping apps, integrating with CRM and ERP systems, and managing content.",
+    "auth_methods": [
+      "OAuth2",
+      "API key",
+      "Basic"
+    ],
+    "auth_note": "OAuth 1.0a, tokens, and login credentials are also supported",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.adobe.com/commerce/webapi/rest/",
+        "snippet": "The REST API documentation describes the REST APIs that are available in Adobe Commerce (PaaS) and Adobe Commerce as a Cloud Service (SaaS)."
+      },
+      {
+        "url": "https://developer.adobe.com/commerce/webapi/rest/",
+        "snippet": "Adobe Commerce provides a wide range of REST API endpoints that allow you to perform actions on behalf of Commerce administrators, customers, and guest shoppers."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:07:10.122331+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Squarespace": {
+    "app": "Squarespace",
+    "category": "Ecommerce",
+    "one_liner": "Squarespace Commerce APIs require authentication and permissions for secure data access.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "auth_note": "API keys and OAuth access tokens can be used for authentication, with API keys visible only once during generation.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+        "snippet": "To keep Squarespace merchant site data private and secure, every request to Commerce APIs must be authenticated and have minimum permissions."
+      },
+      {
+        "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+        "snippet": "API keys will never expire as long as the merchant site remains active."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:07:27.297933+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Ecwid": {
+    "app": "Ecwid",
+    "category": "Ecommerce",
+    "one_liner": "Ecwid provides two ways to install and operate applications: native and external apps, with different authentication and API interaction methods.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "auth_note": "Native apps use Ecwid JS SDK to get access token, while external apps handle OAuth process themselves.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://github.com/Ecwid/ecwid-api-docs/blob/master/includes/_authentication.md",
+        "snippet": "Ecwid provides two ways of installing and operating applications in an online store: native and external apps."
+      },
+      {
+        "url": "https://github.com/Ecwid/ecwid-api-docs/blob/master/includes/_authentication.md",
+        "snippet": "The installation process starts with user visiting app details page. On that page, they can install the app by providing the necessary permissions to it."
+      },
+      {
+        "url": "https://github.com/Ecwid/ecwid-api-docs/blob/master/includes/_authentication.md",
+        "snippet": "This method of getting access token is meant for apps that are installed outside of the Ecwid App Market, for example: apps that work on a device, apps for mobile devices, CMS plugins, etc."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:07:50.467187+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "Gumroad": {
+    "app": "Gumroad",
+    "category": "Ecommerce",
+    "one_liner": "A CLI for the Gumroad API, designed for humans and AI agents alike.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "auth_note": "OAuth2 via device approval or environment variable, or API key via environment variable",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://github.com/antiwork/gumroad-cli",
+        "snippet": "CLI for the Gumroad API. Designed for humans and AI agents alike."
+      },
+      {
+        "url": "https://github.com/antiwork/gumroad-cli",
+        "snippet": "For CI and agents with an existing token, set GUMROAD_ACCESS_TOKEN or pipe the token into gumroad auth login --with-token"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:08:10.358465+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "Amazon Selling Partner": {
+    "app": "Amazon Selling Partner",
+    "category": "Ecommerce",
+    "one_liner": "Programmatically access Amazon selling data for orders, shipments, payments, and more.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.amazonservices.com/",
+        "snippet": "The Selling Partner API (SP-API) is a REST-based API that helps Amazon selling partners programmatically access their data on orders, shipments, payments, and much more."
+      }
+    ],
+    "confidence": "medium",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:08:22.026448+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "fanbasis": {
+    "app": "fanbasis",
+    "category": "Ecommerce",
+    "one_liner": "All-in-one e-commerce platform for selling knowledge, experience, or services online.",
+    "auth_methods": [
+      "None"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "SDK-only",
+      "breadth": "unknown",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.fanbasis.com/",
+        "snippet": "FanBasis was built to run your business end-to-end. From payments to fulfillment, it's everything you need to sell smarter, get paid faster, and scale without limits."
+      },
+      {
+        "url": "https://www.fanbasis.com/",
+        "snippet": "FanBasis is full-stack business infrastructure powering the next generation of internet entrepreneurs."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:08:42.701153+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "DataForSEO": {
+    "app": "DataForSEO",
+    "category": "Data, SEO and Scraping",
+    "one_liner": "DataForSEO API requires Basic Authentication for API access.",
+    "auth_methods": [
+      "Basic"
+    ],
+    "auth_note": "API credentials should be passed in the 'Authorization' header within the request in the format 'Basic login:password'.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.dataforseo.com/v3/auth/",
+        "snippet": "To authorize, use this code: login=\"login\" password=\"password\" cred=\"$(printf ${login}:${password} | base64)\""
+      },
+      {
+        "url": "https://docs.dataforseo.com/v3/auth/",
+        "snippet": "Note that it is not possible to pass the login and password in URL parameters."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:09:02.563135+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "SE Ranking": {
+    "app": "SE Ranking",
+    "category": "Data, SEO and Scraping",
+    "one_liner": "SE Ranking API provides access to data and SEO tools for website analysis and optimization.",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": "API key can be used in the Authorization header or as a query parameter.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://seranking.com/api/data/getting-started/",
+        "snippet": "All requests to the Data API must be authenticated."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:09:27.737102+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Ahrefs": {
+    "app": "Ahrefs",
+    "category": "Data, SEO and Scraping",
+    "one_liner": "Access Ahrefs marketing and search data through APIs and developer tools for custom integrations and workflows.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "auth_note": "API keys can be created and managed, OAuth 2.0 authorization is also supported",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.ahrefs.com/",
+        "snippet": "Access Ahrefs marketing and search data through our APIs and developer tools to build custom integrations and workflows."
+      },
+      {
+        "url": "https://docs.ahrefs.com/",
+        "snippet": "Create and manage your API keys"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:09:40.715169+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "MrScraper": {
+    "app": "MrScraper",
+    "category": "Data, SEO and Scraping",
+    "one_liner": "AI-powered and manual scraping platform for extracting data from websites.",
+    "auth_methods": [
+      "None"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "SDK-only",
+      "breadth": "unknown",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.mrscraper.com/docs/getting-started/overview",
+        "snippet": "Welcome to the MrScraper Documentation!"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:09:53.914255+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Apify": {
+    "app": "Apify",
+    "category": "Data, SEO and Scraping",
+    "one_liner": "Programmatic access to the Apify platform via RESTful HTTP endpoints",
+    "auth_methods": [
+      "API key",
+      "Token"
+    ],
+    "auth_note": "API token or payment credential (for agentic payments)",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.apify.com/api/v2",
+        "snippet": "The Apify API (version 2) provides programmatic access to the Apify platform."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:10:17.624442+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Firecrawl": {
+    "app": "Firecrawl",
+    "category": "Data, SEO and Scraping",
+    "one_liner": "Scrape, crawl, map, and search web content with various features and authentication methods.",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": "Requires an Authorization header with a Bearer token containing the API Key.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.firecrawl.dev/api-reference/introduction",
+        "snippet": "All requests contain the following base URL: ... For authentication, it\u2019s required to include an Authorization header."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:10:32.267481+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Bright Data": {
+    "app": "Bright Data",
+    "category": "Data, SEO and Scraping",
+    "one_liner": "Bright Data provides API and native proxy protocol access for data scraping and SEO tasks.",
+    "auth_methods": [
+      "API key",
+      "Basic"
+    ],
+    "auth_note": "API key is a secure hashed token, native proxy protocol uses username and password.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.brightdata.com/api-reference/authentication",
+        "snippet": "An API key is a secure hashed token used to authenticate with Bright Data API."
+      },
+      {
+        "url": "https://docs.brightdata.com/api-reference/authentication",
+        "snippet": "Proxy protocol access is supported by All proxy networks (Datacenter, ISP, Residential, and Mobile), Web Unlocker, and Scraping Browser."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:36:06.442285+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Sherlock": {
+    "app": "Sherlock",
+    "category": "Data, SEO and Scraping",
+    "one_liner": "Hunt down social media accounts by username across 400+ social networks",
+    "auth_methods": [
+      "None"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "SDK-only",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://github.com/sherlock-project/sherlock",
+        "snippet": "Installation \u2022 Usage \u2022 Contributing"
+      },
+      {
+        "url": "https://github.com/sherlock-project/sherlock",
+        "snippet": "pipx install sherlock-project"
+      },
+      {
+        "url": "https://github.com/sherlock-project/sherlock",
+        "snippet": "Community-maintained packages are available for Debian (>= 13), Ubuntu (>= 22.10), Homebrew, Kali, and BlackArch."
+      },
+      {
+        "url": "https://github.com/sherlock-project/sherlock",
+        "snippet": "Sherlock: Find Usernames Across Social Networks (Version 0.16.0)"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:11:25.819107+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Waterfall.io": {
+    "app": "Waterfall.io",
+    "category": "Data, SEO and Scraping",
+    "one_liner": "Provides API endpoints for data, SEO, and scraping",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": "API keys should be stored in environment variables, rotated periodically, and used per team/workflow when possible",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.waterfall.io/v1/authentication",
+        "snippet": "Base API URL is https://api.waterfall.io/v1/ for v1 endpoints."
+      },
+      {
+        "url": "https://docs.waterfall.io/v1/authentication",
+        "snippet": "Use dedicated keys per team/workflow when possible."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:11:33.495207+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Clay": {
+    "app": "Clay",
+    "category": "Data, SEO and Scraping",
+    "one_liner": "Send or retrieve data from any tool or database using an API endpoint.",
+    "auth_methods": [
+      "API key",
+      "Token",
+      "None"
+    ],
+    "auth_note": "API keys and bearer tokens can be stored securely at the workspace level.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://university.clay.com/docs/http-api-integration-overview",
+        "snippet": "HTTP API lets you send or retrieve data from any tool or database using an API endpoint, even when Clay doesn't offer a native integration."
+      },
+      {
+        "url": "https://university.clay.com/docs/http-api-integration-overview",
+        "snippet": "Storing authentication credentials at the workspace level Instead of entering API keys or bearer tokens manually in the Headers field each time, you can save your auth credentials in an HTTP API (Headers) account."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:36:12.557046+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "GitHub": {
+    "app": "GitHub",
+    "category": "Developer, Infra and Data platforms",
+    "one_liner": "GitHub REST API requires authentication to access most endpoints, using personal access tokens, GitHub Apps, or OAuth tokens.",
+    "auth_methods": [
+      "OAuth2",
+      "API key",
+      "Basic"
+    ],
+    "auth_note": "Personal access tokens, GitHub Apps, and OAuth tokens are used for authentication.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+        "snippet": "To authenticate your request, you will need to provide an authentication token with the required scopes or permissions."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:12:39.552563+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Vercel": {
+    "app": "Vercel",
+    "category": "Developer, Infra and Data platforms",
+    "one_liner": "Interact programmatically with your Vercel account using the SDK or direct HTTP requests.",
+    "auth_methods": [
+      "Token"
+    ],
+    "auth_note": "Vercel Access Tokens are required to authenticate and use the Vercel API.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://vercel.com/docs/rest-api",
+        "snippet": "Interact programmatically with your Vercel account using the SDK or direct HTTP requests."
+      },
+      {
+        "url": "https://vercel.com/docs/rest-api",
+        "snippet": "Vercel Access Tokens are required to authenticate and use the Vercel API."
+      },
+      {
+        "url": "https://vercel.com/docs/rest-api",
+        "snippet": "The API is exposed as an HTTP/1 and HTTP/2 service over SSL."
+      },
+      {
+        "url": "https://vercel.com/docs/rest-api",
+        "snippet": "Rate limits are specified via response headers: X-RateLimit-Limit, X-RateLimit-Remaining, and X-RateLimit-Reset."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:12:52.033153+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Netlify": {
+    "app": "Netlify",
+    "category": "Developer, Infra and Data platforms",
+    "one_liner": "Manage atomic deploys, form submissions, and more using the Netlify REST API.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "auth_note": "OAuth2 for public integrations, API key (personal access token) for manual authentication.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+        "snippet": "Use the Netlify REST API to manage atomic deploys of your sites and apps, manage form submissions, inject JavaScript snippets, manage DNS, and so much more."
+      },
+      {
+        "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+        "snippet": "All URLs start with https://api.netlify.com/api/v1/ . SSL only."
+      },
+      {
+        "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+        "snippet": "Netlify uses OAuth2 for authentication."
+      },
+      {
+        "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+        "snippet": "To generate a personal access token (PAT), go to Applications . Personal access tokens"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:13:14.777750+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Cloudflare": {
+    "app": "Cloudflare",
+    "category": "Developer, Infra and Data platforms",
+    "one_liner": "Authenticate with a Cloudflare API key for GraphQL Analytics API access",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": "API key does not authorize access to accounts or zones",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "GraphQL",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developers.cloudflare.com/analytics/graphql-api/getting-started/authentication/api-key-auth/",
+        "snippet": "API keys are unique to each Cloudflare user and used only for authentication."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:13:25.610955+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Supabase": {
+    "app": "Supabase",
+    "category": "Developer, Infra and Data platforms",
+    "one_liner": "Supabase auto-generates a REST API from your database schema, allowing you to connect to your database through a restful interface.",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": "API Keys can be found in the Settings > API Keys section of the Dashboard.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://supabase.com/docs/guides/api",
+        "snippet": "Supabase auto-generates an API directly from your database schema allowing you to connect to your database through a restful interface, directly from the browser."
+      },
+      {
+        "url": "https://supabase.com/docs/guides/api",
+        "snippet": "The API is auto-generated from your database and is designed to get you building as fast as possible, without writing a single line of code."
+      },
+      {
+        "url": "https://supabase.com/docs/guides/api",
+        "snippet": "The reflected API is designed to retain as much of Postgres' capability as possible including: Basic CRUD operations (Create/Read/Update/Delete)"
+      },
+      {
+        "url": "https://supabase.com/docs/guides/api",
+        "snippet": "The API is configured to work with Postgres's Row Level Security, provisioned behind an API gateway with key-auth enabled."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:13:39.180877+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Neo4j": {
+    "app": "Neo4j",
+    "category": "Developer, Infra and Data platforms",
+    "one_liner": "Neo4j provides authentication and authorization features for user and role management.",
+    "auth_methods": [
+      "OAuth2",
+      "API key",
+      "Basic",
+      "Token",
+      "None",
+      "Other"
+    ],
+    "auth_note": "Native auth provider, User auth providers, LDAP auth provider, Single sign-on provider, Custom-built plugin auth providers, Kerberos authentication and single sign-on, Mixed-mode authentication",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://neo4j.com/docs/operations-manual/current/authentication-authorization/",
+        "snippet": "Neo4j provides a native auth provider that stores user and role information in the system database."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:14:02.793717+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Snowflake": {
+    "app": "Snowflake",
+    "category": "Developer, Infra and Data platforms",
+    "one_liner": "Snowflake REST APIs authentication methods include key pair authentication, OAuth, programmatic access token, and workload identity federation.",
+    "auth_methods": [
+      "OAuth2",
+      "API key",
+      "Token"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+        "snippet": "This topic describes how to authenticate to the server when using the Snowflake REST APIs."
+      },
+      {
+        "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+        "snippet": "Using key pair authentication, you need to complete the following tasks: Set up key pair authentication."
+      },
+      {
+        "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+        "snippet": "Using OAuth, follow these steps: Set up OAuth for authentication."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:14:25.763296+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "MongoDB Atlas": {
+    "app": "MongoDB Atlas",
+    "category": "Developer, Infra and Data platforms",
+    "one_liner": "Authentication for MongoDB Atlas API using service accounts or client credentials",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": "Service accounts (oauth2) and client credentials",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/authentication",
+        "snippet": "The API accepts 2 different authentication methods: Service accounts (oauth2)"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:14:36.263497+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Datadog": {
+    "app": "Datadog",
+    "category": "Developer, Infra and Data platforms",
+    "one_liner": "Datadog is a monitoring and analytics platform for large-scale applications and infrastructure.",
+    "auth_methods": [
+      "API key",
+      "Token"
+    ],
+    "auth_note": "API keys and tokens are used for authentication.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.datadoghq.com/api/latest/authentication/",
+        "snippet": "API keys and tokens are used for authentication."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:14:57.067168+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Sentry": {
+    "app": "Sentry",
+    "category": "Developer, Infra and Data platforms",
+    "one_liner": "Sentry provides authentication methods for API access, including OAuth2 and API keys.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "auth_note": "API keys can be created within Sentry or self-hosted Sentry, while OAuth2 is used for third-party applications.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.sentry.io/api/auth/",
+        "snippet": "Sentry provides authentication methods for API access, including OAuth2 and API keys."
+      },
+      {
+        "url": "https://docs.sentry.io/api/auth/",
+        "snippet": "The endpoints that require a user authentication token are specific to your user, such as Retrieve an Organization."
+      },
+      {
+        "url": "https://docs.sentry.io/api/auth/",
+        "snippet": "The access token only provides access to the specific organization the user selected during the OAuth flow."
+      },
+      {
+        "url": "https://docs.sentry.io/api/auth/",
+        "snippet": "The page may not be the official source for this app, as the domain matches the app's known official domain."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:15:20.915190+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Notion": {
+    "app": "Notion",
+    "category": "Productivity and Project Management",
+    "one_liner": "A productivity and project management tool with an API for integration.",
+    "auth_methods": [
+      "OAuth2",
+      "API key",
+      "Token"
+    ],
+    "auth_note": "Bearer tokens are provided through OAuth flow, personal access tokens, or internal connections.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developers.notion.com/reference/authentication",
+        "snippet": "The Notion API accepts bearer tokens in this header."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:15:41.920837+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Airtable": {
+    "app": "Airtable",
+    "category": "Productivity and Project Management",
+    "one_liner": "Airtable's Web API allows users to interact with their data programmatically, with varying call limitations based on plan type.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "auth_note": "Legacy API key authentication is deprecated and restricted to Enterprise accounts with the Enterprise API feature enabled.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://support.airtable.com/docs/getting-started-with-airtables-web-api",
+        "snippet": "You can access the documentation for the Web API here, or directly from your base by clicking on the Help button in the upper right-hand corner while you are logged in on a laptop or desktop."
+      },
+      {
+        "url": "https://support.airtable.com/docs/getting-started-with-airtables-web-api",
+        "snippet": "For more information about the Web API and authentication methods, see the Airtable Web API documentation."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:15:59.889950+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Linear": {
+    "app": "Linear",
+    "category": "Productivity and Project Management",
+    "one_liner": "Build apps and integrations for Linear using the GraphQL API and TypeScript SDK",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "auth_note": "OAuth 2.0 or personal API keys can be used",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "GraphQL",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://linear.app/developers",
+        "snippet": "Learn about building apps and integrations for Linear using the GraphQL API and TypeScript SDK"
+      }
+    ],
+    "confidence": "medium",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:16:09.993037+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "Jira": {
+    "app": "Jira",
+    "category": "Productivity and Project Management",
+    "one_liner": "Jira REST API authentication using basic authentication with an Atlassian account email address and API token.",
+    "auth_methods": [
+      "Basic"
+    ],
+    "auth_note": "Basic authentication is not as secure as other methods, and API tokens are recommended.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/",
+        "snippet": "Basic authentication is not as secure as other methods. We recommend using it for simple scripts and manual calls to the REST APIs."
+      },
+      {
+        "url": "https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/",
+        "snippet": "You can construct and send basic auth headers. To do this you perform the following steps..."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:16:27.195828+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Asana": {
+    "app": "Asana",
+    "category": "Productivity and Project Management",
+    "one_liner": "Build apps that integrate with Asana to automate repeatable processes and improve productivity.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://asana.com/developers",
+        "snippet": "Use the Asana API to build apps that automate repeatable processes, like creating follow-up tasks, sending updates, or organizing projects."
+      }
+    ],
+    "confidence": "medium",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:16:38.854537+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "Monday.com": {
+    "app": "Monday.com",
+    "category": "Productivity and Project Management",
+    "one_liner": "Monday.com API utilizes personal V2 API tokens for authentication and access control",
+    "auth_methods": [
+      "Token"
+    ],
+    "auth_note": "Personal V2 API tokens are unique to each user and have no explicit length",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.monday.com/api-reference/docs/authentication",
+        "snippet": "The monday.com platform API utilizes personal V2 API tokens to authenticate requests and identify the user making the call."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:16:53.995592+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "ClickUp": {
+    "app": "ClickUp",
+    "category": "Productivity and Project Management",
+    "one_liner": "ClickUp API authentication uses personal tokens or OAuth for API access",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "auth_note": "Personal tokens begin with pk_ and never expire, while OAuth flow allows users to authorize Workspaces for the app",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.clickup.com/docs/authentication",
+        "snippet": "To use the ClickUp API, you must authenticate every request."
+      },
+      {
+        "url": "https://developer.clickup.com/docs/authentication",
+        "snippet": "Personal tokens never expire."
+      },
+      {
+        "url": "https://developer.clickup.com/docs/authentication",
+        "snippet": "NoteClickUp uses the authorization code grant type."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:17:09.681702+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Coda": {
+    "app": "Coda",
+    "category": "Productivity and Project Management",
+    "one_liner": "A RESTful API for programmatically interacting with Coda docs",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_note": "Coda MCP server is optimized for LLM usage patterns"
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://coda.io/developers",
+        "snippet": "The Coda API is a RESTful API that lets you programmatically interact with Coda docs"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:17:32.431978+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Smartsheet": {
+    "app": "Smartsheet",
+    "category": "Productivity and Project Management",
+    "one_liner": "Programmatically access and manage Smartsheet resources",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": true,
+      "mcp_note": "Smartsheet MCP server: Connect Smartsheet to AI clients like Claude, Cursor, and Codex"
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developers.smartsheet.com/api/smartsheet/introduction",
+        "snippet": "The Smartsheet API enables you to programmatically access and manage your organization's Smartsheet resources."
+      },
+      {
+        "url": "https://developers.smartsheet.com/api/smartsheet/introduction",
+        "snippet": "Smartsheet provides client libraries that make it easy to call the API from your preferred language."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:17:46.342821+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Harvest": {
+    "app": "Harvest",
+    "category": "Productivity and Project Management",
+    "one_liner": "Harvest API requires an access token for authentication, offering Personal Access Tokens and OAuth2 Authentication flows.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "auth_note": "Personal Access Tokens are the preferred method for scripts, while OAuth2 is for integrations that other users can use.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+        "snippet": "The V2 API requires an access token to authenticate requests."
+      },
+      {
+        "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+        "snippet": "Personal Access Tokens are the preferred method when you want to write your own scripts that consume our API."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:18:07.838613+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Stripe": {
+    "app": "Stripe",
+    "category": "Finance and Fintech",
+    "one_liner": "Stripe API uses API keys for authentication, with options for restricted keys and secret keys.",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": "API keys can be restricted or secret, with secret keys granting access to all API resources.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.stripe.com/api/authentication",
+        "snippet": "The Stripe API uses API keys to authenticate requests."
+      },
+      {
+        "url": "https://docs.stripe.com/api/authentication",
+        "snippet": "Make all API requests over HTTPS."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:18:27.402851+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Plaid": {
+    "app": "Plaid",
+    "category": "Finance and Fintech",
+    "one_liner": "Retrieve bank account information for electronic funds transfers and verification.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://plaid.com/docs/api/products/auth/",
+        "snippet": "API reference for Auth endpoints and webhooks"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:18:45.007636+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Binance": {
+    "app": "Binance",
+    "category": "Finance and Fintech",
+    "one_liner": "Binance API Agent provides access to Binance's trading and financial data",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": "API-keys are case sensitive and can be configured to access specific secure endpoints",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://binance-docs.github.io/apiAgent-API-EN/",
+        "snippet": "All endpoints return either a JSON object or array."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:19:00.648290+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Paygent Connect": {
+    "app": "Paygent Connect",
+    "category": "Finance and Fintech",
+    "one_liner": "Paygent Connect is a Python SDK for metering and metering-related tasks.",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": "API key is read from PAYGENT_API_KEY env var if not passed.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "SDK-only",
+      "breadth": "narrow",
+      "mcp_exists": true,
+      "mcp_note": "Metering Control Plane (MCP) exists and is used for metering-related tasks."
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.paygent.to/reference/sdk-reference/",
+        "snippet": "from paygent import (Paygent, paygent_context, paygent_track, ...)"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:19:24.323285+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "iPayX": {
+    "app": "iPayX",
+    "category": "Finance and Fintech",
+    "one_liner": "Neutral FX verification layer for fintech sales teams and FX brokers.",
+    "auth_methods": [
+      "None"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "none found",
+      "breadth": "unknown",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.ipayx.ai/docs/api?lang=en",
+        "snippet": "How It Works - Enter your transaction \u2013 Amount, currencies (e.g. CAD \u2192 USD), and the rate your bank applied."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:19:35.580835+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "QuickBooks": {
+    "app": "QuickBooks",
+    "category": "Finance and Fintech",
+    "one_liner": "Programmatic access to accounting features for small and mid-sized businesses",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": "No API keys or basic authentication options",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://dev.to/zuplo/quickbooks-api-complete-developers-guide-2026-3l77",
+        "snippet": "The QuickBooks API gives developers programmatic access to the accounting features that millions of small and mid-sized businesses rely on every day."
+      },
+      {
+        "url": "https://dev.to/zuplo/quickbooks-api-complete-developers-guide-2026-3l77",
+        "snippet": "The QuickBooks Online Accounting API is a REST API from Intuit that provides programmatic access to a QuickBooks Online company's financial data."
+      },
+      {
+        "url": "https://dev.to/zuplo/quickbooks-api-complete-developers-guide-2026-3l77",
+        "snippet": "This guide covers everything you need \u2014 from OAuth 2.0 authentication and rate limits to webhooks, SDKs, and production-ready code examples."
+      },
+      {
+        "url": "https://dev.to/zuplo/quickbooks-api-complete-developers-guide-2026-3l77",
+        "snippet": "The two primary scopes you'll work with are: com.intuit.quickbooks.accounting \u2014 full read/write access to QuickBooks Online accounting data. Required for most integrations."
+      },
+      {
+        "url": "https://dev.to/zuplo/quickbooks-api-complete-developers-guide-2026-3l77",
+        "snippet": "QuickBooks uses the Authorization Code flow \u2014 the standard server-side OAuth 2.0 flow."
+      },
+      {
+        "url": "https://dev.to/zuplo/quickbooks-api-complete-developers-guide-2026-3l77",
+        "snippet": "The response includes both your access token and refresh token: {\"token_type\": \"bearer\",\"expires_in\": 3600,\"refresh_token\": \"REFRESH_TOKEN\",\"x_refresh_token_expires_in\": 157680000,\"access_token\": \"ACCESS_TOKEN\"}"
+      },
+      {
+        "url": "https://dev.to/zuplo/quickbooks-api-complete-developers-guide-2026-3l77",
+        "snippet": "Token management best practices: - Store both tokens in a persistent, encrypted data store (not session memory)"
+      }
+    ],
+    "confidence": "medium",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:19:58.331065+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "Xero": {
+    "app": "Xero",
+    "category": "Finance and Fintech",
+    "one_liner": "Xero Developer API for powering innovation and growth through SDKs and code samples.",
+    "auth_methods": [
+      "None"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "SDK-only",
+      "breadth": "unknown",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://github.com/XeroAPI",
+        "snippet": "Check out our SDKs and code samples to get started with your integration."
+      }
+    ],
+    "confidence": "medium",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:20:12.252528+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "Brex": {
+    "app": "Brex",
+    "category": "Finance and Fintech",
+    "one_liner": "Unified spend platform with global corporate cards, expense management, and bill pay, with APIs for integration.",
+    "auth_methods": [
+      "OAuth2",
+      "API key",
+      "Basic",
+      "Token",
+      "None"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.brex.com/",
+        "snippet": "Using the Brex API, you can power your internal tools and create custom workflows."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:20:23.865821+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Ramp": {
+    "app": "Ramp",
+    "category": "Finance and Fintech",
+    "one_liner": "Programmatic access to corporate card and spend management platform for automating expense management and corporate payments.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "auth_note": "API key authentication employs Bearer tokens, while OAuth 2.0 supports client credentials flow.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://apidog.com/blog/ramp-api/",
+        "snippet": "Accessing the Ramp API requires specific steps involving account creation, key generation, and environment selection."
+      },
+      {
+        "url": "https://apidog.com/blog/ramp-api/",
+        "snippet": "Ramp structures its API pricing around the broader platform fees, ensuring transparent models for scalable integrations."
+      }
+    ],
+    "confidence": "medium",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:20:45.590763+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "PitchBook": {
+    "app": "PitchBook",
+    "category": "Finance and Fintech",
+    "one_liner": "Access company data from PitchBook via a Python API with real-time access and AI Workbench support.",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": "API key is required in the Authorization header as 'PB-Token {API_KEY}'",
+    "self_serve": "gated",
+    "gate_reason": "Requires API key purchase and account manager contact for key provision",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_note": "MCP server is configured for AI Workbench support"
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://dlthub.com/context/source/pitchbook-api",
+        "snippet": "The PitchBook API v2 provides real-time access to company data."
+      },
+      {
+        "url": "https://dlthub.com/context/source/pitchbook-api",
+        "snippet": "dlt is an open-source Python library that handles authentication, pagination, and schema evolution automatically."
+      },
+      {
+        "url": "https://dlthub.com/context/source/pitchbook-api",
+        "snippet": "This may be a different product with a similar name, or a third-party source."
+      }
+    ],
+    "confidence": "medium",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:36:28.131911+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "NotebookLM": {
+    "app": "NotebookLM",
+    "category": "AI, Research and Media-native",
+    "one_liner": "A powerful tool for generating insights and summaries from documents, with APIs for notebook management.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "auth_note": "Uses OAuth2 with Bearer tokens, obtained via gcloud auth print-access-token.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+        "snippet": "To create a new notebook, use the notebooks.create method."
+      },
+      {
+        "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+        "snippet": "NotebookLM Enterprise is a powerful tool for generating insights and summaries from your documents."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:21:34.281315+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Otter AI": {
+    "app": "Otter AI",
+    "category": "AI, Research and Media-native",
+    "one_liner": "Otter.ai's Public API provides programmatic access to retrieve channels, conversations, transcripts, audio, action items, insights, outlines, and workspace details from your Otter account.",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": "API key is created and managed through the Otter.ai account, and is used in the Authorization header for every request.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+        "snippet": "All API requests require authentication using Bearer token authentication."
+      },
+      {
+        "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+        "snippet": "There is a limit of 2 API keys per user."
+      },
+      {
+        "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+        "snippet": "Enterprise plan users are currently limited to 10 requests / second."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:21:59.884892+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Fathom": {
+    "app": "Fathom",
+    "category": "AI, Research and Media-native",
+    "one_liner": "Public API for accessing meeting insights, enabling workflows and integrations.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "auth_note": "API keys are created at the user level, with admin API keys not granting access to other users' unshared meetings.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://help.fathom.video/en/articles/8368641",
+        "snippet": "Fathom now has a public API that gives you developer\u2011friendly access to meeting insights so you can build workflows and integrations that connect Fathom with the rest of your tools."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:22:11.446279+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Consensus": {
+    "app": "Consensus",
+    "category": "AI, Research and Media-native",
+    "one_liner": "Seamlessly integrate up-to-date peer-reviewed citations into custom workflows",
+    "auth_methods": [
+      "None"
+    ],
+    "auth_note": null,
+    "self_serve": "gated",
+    "gate_reason": "Application required",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://consensus.app/home/api/",
+        "snippet": "The Consensus API is available by application only."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:22:32.181101+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Reducto": {
+    "app": "Reducto",
+    "category": "AI, Research and Media-native",
+    "one_liner": "Parse, extract, classify, split, and edit 30+ file types into production-ready structured JSON.",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": "Get your API key by signing up at studio.reducto.ai and creating an API key, then set it as an environment variable.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": true,
+      "mcp_note": "MCP Server supports connections via the Model Context Protocol, works with Claude, Cursor, VS Code, and more."
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://reducto.ai/developers",
+        "snippet": "One API for every document Parse, extract, classify, split, and edit 30+ file types."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:22:51.378891+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "Devin": {
+    "app": "Devin",
+    "category": "AI, Research and Media-native",
+    "one_liner": "Devin API uses a principal + token model for authentication, supporting service users and personal access tokens.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "auth_note": "Service users use API keys, while personal access tokens are used by human users.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": true,
+      "mcp_note": "Devin MCP supports service user API keys, but not legacy keys."
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.devin.ai/api-reference/authentication",
+        "snippet": "The Devin API uses a principal + token model."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:23:12.517201+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "higgsfield": {
+    "app": "higgsfield",
+    "category": "AI, Research and Media-native",
+    "one_liner": "Official Python SDK for Higgsfield AI, supporting synchronous and asynchronous usage for text-to-image generation.",
+    "auth_methods": [
+      "API key"
+    ],
+    "auth_note": "API credentials must be set as environment variables, either as a single key or separate API key and secret.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://github.com/higgsfield-ai/higgsfield-client",
+        "snippet": "pip install higgsfield-client"
+      },
+      {
+        "url": "https://github.com/higgsfield-ai/higgsfield-client",
+        "snippet": "Before using the client, set your API credentials as environment variables."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:23:35.926080+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "Mermaid CLI": {
+    "app": "Mermaid CLI",
+    "category": "AI, Research and Media-native",
+    "one_liner": "A command-line interface for mermaid that generates SVG/PNG/PDF files from mermaid definition files.",
+    "auth_methods": [
+      "None"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "SDK-only",
+      "breadth": "unknown",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://github.com/mermaid-js/mermaid-cli",
+        "snippet": "This is a command-line interface (CLI) for mermaid."
+      },
+      {
+        "url": "https://github.com/mermaid-js/mermaid-cli",
+        "snippet": "npm install -g @mermaid-js/mermaid-cli"
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:24:20.971002+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  },
+  "YouTube Transcript": {
+    "app": "YouTube Transcript",
+    "category": "AI, Research and Media-native",
+    "one_liner": "Python API to retrieve YouTube video transcripts/subtitles",
+    "auth_methods": [
+      "None"
+    ],
+    "auth_note": null,
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://pypi.org/project/youtube-transcript-api/",
+        "snippet": "This is a python API which allows you to get the transcripts/subtitles for a given YouTube video."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:24:41.761437+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": false
+  },
+  "Grain": {
+    "app": "Grain",
+    "category": "AI, Research and Media-native",
+    "one_liner": "Grain provides an API for accessing its data, with support for OAuth2 authorization and rate limiting.",
+    "auth_methods": [
+      "OAuth2",
+      "API key",
+      "Token"
+    ],
+    "auth_note": "API keys and tokens can be generated for personal and workspace use cases.",
+    "self_serve": "self-serve",
+    "gate_reason": null,
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_note": null
+    },
+    "verdict": "buildable",
+    "blocker": null,
+    "evidence": [
+      {
+        "url": "https://developers.grain.com/",
+        "snippet": "The API supports a standard OAuth2 Authorization Code flow, including the PKCE extension for client-side only authentication."
+      },
+      {
+        "url": "https://developers.grain.com/",
+        "snippet": "Grain allows a total of 300 requests per minute."
+      }
+    ],
+    "confidence": "high",
+    "pass_number": 1,
+    "fetched_at": "2026-07-09T11:25:05.731002+00:00",
+    "model_used": "llama-3.1-8b-instant",
+    "domain_matched": true
+  }
+}
