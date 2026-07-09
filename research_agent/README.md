@@ -1,161 +1,103 @@
-# Composio Research Agent
+# Composio AI Product Research Agent
 
-An agent-assisted research pipeline built for the Composio AI Product Ops Intern take-home assignment.
-The pipeline evaluates 100 SaaS applications and produces a structured research output plus a polished HTML case study.
+A research workflow for evaluating whether 100 SaaS applications can be turned into agent-callable toolkits.
+This repo was created for the Composio AI Product Ops Intern take-home assignment.
 
-## Overview
+## What this project does
 
-This project automates research across a fixed app list and extracts:
+The pipeline automates research across a curated list of SaaS apps and produces:
 
-- Category
-- One-line description
-- Authentication methods
-- Self-serve vs gated onboarding
-- API surface (REST / GraphQL / SDK / MCP)
-- Buildability verdict
-- Evidence links
-- Confidence score
-
-The pipeline also aggregates the results to surface patterns and verification insights.
-
-## Features
-
-- Automated documentation discovery and extraction
-- LLM-assisted structured data extraction
-- JSON schema validation and retry logic
-- Evidence capture with source URLs
+- Structured output for every app
+- Authentication and self-serve / gated analysis
+- API surface classification (REST / GraphQL / SDK / MCP)
+- Buildability verdicts with evidence links
 - Confidence scoring and manual-review flags
-- Pattern analysis across the SaaS app set
-- Interactive HTML case study generation
+- A single interactive HTML case study report
 
-## Research Workflow
+## Why it matters
 
-1. Load the 100 app list from `apps.py`
-2. Search official docs and fetch relevant pages
-3. Extract structured fields using the agent pipeline
-4. Validate each record against `schema.py`
-5. Retry weak or malformed outputs
-6. Flag ambiguous apps for manual review
-7. Generate the HTML report in `case_study.html`
+Instead of manually inspecting each product, this workflow:
 
-## What the agent extracts
+- finds official documentation pages,
+- extracts standardized signals with an LLM-assisted pipeline,
+- validates results with JSON schema rules,
+- surfaces uncertain apps for human review,
+- then summarizes ecosystem patterns in an easy-to-read report.
 
-Each app record can include:
-
-- Category
-- Description
-- Authentication method(s)
-- Self-serve or gated status
-- API surface details
-- MCP-related support signal
-- Buildability verdict
-- Evidence URLs
-- Confidence level
-
-## Verification strategy
-
-The workflow prioritizes accuracy over guesswork:
-
-1. Official documentation search
-2. LLM extraction
-3. JSON schema validation
-4. Retry weak outputs
-5. Confidence scoring
-6. Human review for ambiguous cases
-
-Ambiguous or low-confidence apps are intentionally surfaced rather than automatically over-labeled.
-
-## Pattern analysis
-
-The pipeline aggregates results to identify:
-
-- Dominant authentication methods
-- Self-serve vs gated ratios
-- API surface distribution
-- MCP adoption signals
-- Categories with the easiest integrations
-- Categories requiring partner or enterprise workflows
-
-## Repository structure
-
-```
-.
-├── .gitignore
-├── research_agent/
-│   ├── agent.py
-│   ├── apps.py
-│   ├── case_study.html
-│   ├── generate_case_study.py
-│   ├── README.md
-│   ├── requirements.txt
-│   ├── results_v1.json
-│   ├── run_pass1.py
-│   ├── schema.py
-│   ├── verification.py
-│   └── tests/
-│       └── test_report.py
-```
-
-## Installation
+## Quick start
 
 ```bash
 cd research_agent
 pip install -r requirements.txt
-```
-
-## Run
-
-```bash
 python run_pass1.py --test
 python generate_case_study.py
 ```
 
-## Output
+Then open `case_study.html` in your browser.
 
-The pipeline generates:
+## Repository layout
 
-- `results_v1.json` — structured research output
-- `case_study.html` — interactive HTML case study
+```text
+research_agent/
+├── agent.py               # core research pipeline and extraction logic
+├── apps.py                # 100-app list and categories
+├── case_study.html        # generated interactive report
+├── generate_case_study.py # report builder
+├── README.md              # this file
+├── requirements.txt       # Python dependencies
+├── results_v1.json        # structured research output
+├── run_pass1.py           # entry point for the research workflow
+├── schema.py              # pydantic schema and validation rules
+├── verification.py        # quality checks and review flags
+└── tests/
+    └── test_report.py     # basic report generation test
+```
 
-Open `case_study.html` in a browser to review the final report.
+## How it works
 
-## Human-in-the-loop
+1. Load the app list from `apps.py`
+2. Search official documentation for each app
+3. Fetch the most relevant page(s)
+4. Extract structured fields with the agent pipeline
+5. Validate output against `schema.py`
+6. Retry weak or invalid extractions
+7. Flag ambiguous apps for manual review
+8. Build the final HTML case study
 
-Some applications are intentionally marked for manual follow-up when:
+## Key outputs
 
-- Documentation is ambiguous or incomplete
-- Access appears partner-gated or enterprise-only
-- Authentication requires a paid account or special approval
-- The confidence score is low
+- `results_v1.json` — extracted research records
+- `case_study.html` — polished interactive case study
 
-## Limitations
+## Important considerations
 
-- Docs can change over time.
-- Some enterprise APIs require authenticated access.
-- MCP support evolves rapidly.
-- A sample of apps may receive manual verification rather than full coverage.
+- The process is intentionally conservative: uncertain apps are flagged rather than overclaimed.
+- Source evidence URLs are captured for every extracted record.
+- Some enterprise or gated products may need manual follow-up.
+- MCP support is evolving, so that signal is treated as experimental.
+
+## Notes for reviewers
+
+- `run_pass1.py --test` runs a test pass for the pipeline.
+- `generate_case_study.py` converts the JSON output into the HTML report.
+- `results_v1.json` is the structured dataset used by the report.
+- `case_study.html` is the primary deliverable for review.
 
 ## Future improvements
 
-- Browser automation for deeper verification
-- Multi-agent result validation
-- Automatic docs drift detection
-- Continuous monitoring of API surface changes
-- Direct MCP discovery and validation
+- Add browser automation to verify docs and authentication flows
+- Improve multi-agent validation for uncertain cases
+- Add continuous monitoring for docs drift
+- Add richer MCP discovery and verification
 
-## Technologies used
+## Technologies
 
 - Python
-- JSON schema validation
-- LLM-assisted extraction
-- HTML/CSS report generation
-- HTTP fetching and HTML parsing
+- Pydantic / JSON schema validation
+- HTML report generation
+- LLM-assisted information extraction
+- Requests / HTML parsing
 
-## Assignment deliverables
+## Contact
 
-- ✅ AI research agent
-- ✅ Automated SaaS documentation analysis
-- ✅ Pattern discovery and verification workflow
-- ✅ Human review loop
-- ✅ Interactive HTML case study
-- ✅ Reproducible source code
+If you want to extend this work, start by examining `agent.py`, `schema.py`, and `generate_case_study.py`.
